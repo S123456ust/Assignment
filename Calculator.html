@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+       
+        .Calculator{
+            background-color: rgb(149, 143, 136);
+            border-radius: 15px;
+            padding: 10px;
+            width: 400px;
+            height: 450px;
+            margin: auto;
+            border: 2px solid black;
+            outline: none;
+            box-shadow: box-shadow: 10px 15px 23px 4px rgba(0,0,0,0.7);
+                      -webkit-box-shadow: 10px 15px 23px 4px rgba(0,0,0,0.7);
+                      -moz-box-shadow: 10px 15px 23px 4px rgba(0,0,0,0.7);
+                      
+
+        }
+        .display{
+            width: 98%;
+            height: 65%;
+            background-color: rgb(247, 244, 244);
+            border: 2px solid black;
+            border-radius: 10px;
+            font-family: "Gill Sans", sans-serif;
+            font-size: larger;
+            font-weight: bolder;
+
+
+
+
+        }
+        #btn{
+            background-color: rgb(232, 19, 161);
+            font-size: large;
+            font-weight: bolder;
+        }
+        #btn:active{
+            background-color: rgb(175, 202, 227);
+            box-shadow: inset 0px 0px 0px rgb(232, 201, 161);
+            color: rgb(132, 238, 238);
+
+        }
+        input[type=button]{
+            height: 70%;
+            width: 100%;
+            border: 2px solid white;
+            font-family: "Gill Sans", sans-serif;
+            font-size: large;
+            font-weight: bolder;
+            background-color: rgb(8, 8, 223);
+            border-radius: 5px;
+            color: aliceblue;
+        }
+
+        input:active[type=button]{
+            background-color: rgb(175, 202, 227);
+            box-shadow: inset 0px 0px 0px rgb(232, 201, 161);
+            color: rgb(132, 238, 238);
+        }
+
+
+    </style>
+</head>
+<body>
+    <table class="Calculator">
+        <tr>
+            <td colspan="3"><input type="text"  id="result" class="display" disabled></td>
+            <td><input type="button" id="btn" value="AC" onclick="clearScreen()"></td>
+        </tr>
+
+        <tr>
+            <td><input type="button" value="1" onclick="display('1')"></td>
+            <td><input type="button" value="2" onclick="display('2')"></td>
+            <td><input type="button" value="3" onclick="display('3')"></td>
+            <td><input type="button" value="/" onclick="display('/')"></td>
+
+        </tr>
+
+        <tr>
+            <td><input type="button" value="4" onclick="display('4')"></td>
+            <td><input type="button" value="5" onclick="display('5')"></td>
+            <td><input type="button" value="6" onclick="display('6')"></td>
+            <td><input type="button" value="*" onclick="display('*')"></td>
+
+        </tr>
+
+        <tr>
+            <td><input type="button" value="7" onclick="display('7')"></td>
+            <td><input type="button" value="8" onclick="display('8')"></td>
+            <td><input type="button" value="9" onclick="display('9')"></td>
+            <td><input type="button" value="-" onclick="display('-')"></td>
+
+        </tr>
+        
+        <tr>
+            <td><input type="button" value="0" onclick="display('0')"></td>
+            <td><input type="button" value="." onclick="display('.')"></td>
+            <td><input type="button" value="=" id="btn" onclick="Calculat()"></td>
+            <td><input type="button" value="+" onclick="display('+')"></td>
+
+        </tr>
+
+    </table>
+
+    <script>
+
+        function display(value){
+            document.getElementById('result').value+=value;
+        }
+
+        function clearScreen(){
+           document.getElementById('result').value="";
+        }
+
+        function Calculat(){
+            let a=document.getElementById('result').value;
+            //let b=eval
+            document.getElementById('result').value=eval(a);
+        }
+    </script>
+    
+</body>
+</html>

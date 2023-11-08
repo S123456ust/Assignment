@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reverseWord</title>
+</head>
+<body>
+    <script>
+    function reverseWord(S) {
+        let words = S.split(' '); // Split the sentence into words
+        let newStr = "";
+
+        for (let i = 0; i < words.length; i++) {
+            let str = "";
+
+            for (let j = 0; j < words[i].length; j++) {
+                str = words[i][j] + str; // Reverse each word character by character
+            }
+
+            newStr += str + " "; // Append the reversed word and a space
+        }
+
+        return newStr.trim(); // Remove the trailing space
+    }
+
+    let a = prompt("Enter a Sentence...");
+    document.write(reverseWord(a));
+</script>
+</body>
+</html>
